@@ -4,107 +4,81 @@
 
 @layer base {
   :root {
-    --background: 36 25% 97%;
-    --foreground: 25 15% 15%;
+    --background: 30 10% 97%;
+    --foreground: 20 8% 10%;
+    --card: 30 10% 97%;
+    --card-foreground: 20 8% 10%;
+    --popover: 30 10% 97%;
+    --popover-foreground: 20 8% 10%;
+    --primary: 20 8% 10%;
+    --primary-foreground: 30 10% 97%;
+    --secondary: 30 8% 93%;
+    --secondary-foreground: 20 8% 10%;
+    --muted: 30 8% 91%;
+    --muted-foreground: 20 5% 45%;
+    --accent: 30 8% 91%;
+    --accent-foreground: 20 8% 10%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 30 10% 97%;
+    --border: 30 10% 86%;
+    --input: 30 10% 86%;
+    --ring: 20 8% 10%;
+    --radius: 0px;
 
-    --card: 36 20% 99%;
-    --card-foreground: 25 15% 15%;
-
-    --popover: 36 20% 99%;
-    --popover-foreground: 25 15% 15%;
-
-    --primary: 32 55% 38%;
-    --primary-foreground: 36 25% 97%;
-
-    --secondary: 36 15% 92%;
-    --secondary-foreground: 25 15% 20%;
-
-    --muted: 36 12% 90%;
-    --muted-foreground: 25 10% 48%;
-
-    --accent: 175 40% 38%;
-    --accent-foreground: 36 25% 97%;
-
-    --destructive: 0 62.8% 40%;
-    --destructive-foreground: 36 25% 97%;
-
-    --border: 36 15% 84%;
-    --input: 36 15% 84%;
-    --ring: 32 55% 38%;
-
-    --radius: 0.5rem;
-
-    /* YANA brand — light classic */
-    --yana-gold: #9b6e2e;
-    --yana-gold-light: #c9a56a;
-    --yana-teal: #2a7a72;
-    --yana-dark: #1c1510;
-    --yana-charcoal: #2e2620;
-    --yana-warm: #faf7f2;
-    --yana-cream: #f3ede2;
-    --yana-parchment: #eae0ce;
-    --yana-ink: #2c2016;
-    --yana-muted: #8a7a6a;
-    --yana-border: #d8cebc;
+    --f-black: #111009;
+    --f-dark: #1e1c18;
+    --f-mid: #6b6456;
+    --f-warm: #f8f5f0;
+    --f-cream: #f0ebe3;
+    --f-sand: #e4dcce;
+    --f-border: #d9d1c4;
+    --f-gold: #9c7a3c;
+    --f-gold2: #c4a86a;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
-
   html {
     scroll-behavior: smooth;
   }
-
   body {
-    background-color: var(--yana-warm);
-    color: var(--yana-ink);
+    background-color: var(--f-warm);
+    color: var(--f-black);
     font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
-
   ::selection {
-    background: var(--yana-gold-light);
-    color: var(--yana-warm);
+    background: var(--f-black);
+    color: var(--f-warm);
   }
-
   ::-webkit-scrollbar {
-    width: 3px;
+    width: 2px;
   }
-
   ::-webkit-scrollbar-track {
-    background: var(--yana-cream);
+    background: var(--f-cream);
   }
-
   ::-webkit-scrollbar-thumb {
-    background: var(--yana-gold);
-    border-radius: 2px;
+    background: var(--f-mid);
   }
 }
 
-/* ── Ornament pattern background ── */
-.ornament-bg {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cpolygon points='30,3 57,30 30,57 3,30' stroke='%239B6E2E' stroke-width='0.6' stroke-opacity='0.08' fill='none'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%239B6E2E' fill-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.ornament-dense {
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cpath d='M20 2L38 20L20 38L2 20z' stroke='%239B6E2E' stroke-width='0.5' stroke-opacity='0.1' fill='none'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%239B6E2E' fill-opacity='0.07'/%3E%3Ccircle cx='20' cy='2' r='1' fill='%232A7A72' fill-opacity='0.12'/%3E%3Ccircle cx='38' cy='20' r='1' fill='%232A7A72' fill-opacity='0.12'/%3E%3Ccircle cx='20' cy='38' r='1' fill='%232A7A72' fill-opacity='0.12'/%3E%3Ccircle cx='2' cy='20' r='1' fill='%232A7A72' fill-opacity='0.12'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-/* ── Animations ── */
-@keyframes fadeInUp {
+/* ── animations ── */
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -113,263 +87,232 @@
     opacity: 1;
   }
 }
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes rotateOrn {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes shimmerLight {
+@keyframes marquee {
   0% {
-    background-position: -200% center;
+    transform: translateX(0);
   }
   100% {
-    background-position: 200% center;
+    transform: translateX(-50%);
   }
 }
-
-@keyframes inkDraw {
+@keyframes slowZoom {
   from {
-    stroke-dashoffset: 400;
+    transform: scale(1);
   }
   to {
-    stroke-dashoffset: 0;
+    transform: scale(1.05);
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.anim-up {
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.animate-fade-in {
-  animation: fadeIn 0.7s ease-out forwards;
+.anim-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
 }
-.animate-float {
-  animation: float 7s ease-in-out infinite;
-}
-.animate-spin-slow {
-  animation: rotateOrn 22s linear infinite;
-}
-
-.delay-100 {
+.d1 {
   animation-delay: 0.1s;
 }
-.delay-200 {
-  animation-delay: 0.2s;
+.d2 {
+  animation-delay: 0.25s;
 }
-.delay-300 {
-  animation-delay: 0.3s;
-}
-.delay-400 {
+.d3 {
   animation-delay: 0.4s;
 }
-.delay-500 {
-  animation-delay: 0.5s;
+.d4 {
+  animation-delay: 0.55s;
 }
-.delay-600 {
-  animation-delay: 0.6s;
+.d5 {
+  animation-delay: 0.7s;
 }
-
-/* ── Typography helpers ── */
-.gold-text {
-  color: var(--yana-gold);
-}
-.teal-text {
-  color: var(--yana-teal);
-}
-.ink-text {
-  color: var(--yana-ink);
-}
-.muted-text {
-  color: var(--yana-muted);
+.d6 {
+  animation-delay: 0.85s;
 }
 
-.shimmer-text {
-  background: linear-gradient(
-    90deg,
-    var(--yana-ink) 0%,
-    var(--yana-gold) 35%,
-    var(--yana-gold-light) 50%,
-    var(--yana-gold) 65%,
-    var(--yana-ink) 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmerLight 5s linear infinite;
+/* ── marquee ── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
-/* ── Decorative rule ── */
-.section-line {
-  width: 36px;
-  height: 1px;
-  background: var(--yana-gold);
+/* ── hero zoom ── */
+.hero-img {
+  animation: slowZoom 16s ease-in-out alternate infinite;
+  transform-origin: center;
+}
+
+/* ── type ── */
+.f-display {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.f-display-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1;
+}
+.f-heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.f-body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.f-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.f-caption {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ── buttons ── */
+.btn-primary {
   display: inline-block;
-  flex-shrink: 0;
-}
-
-/* ── Buttons ── */
-.yana-btn {
-  background: transparent;
-  border: 1px solid var(--yana-gold);
-  color: var(--yana-gold);
-  padding: 13px 34px;
+  background: var(--f-black);
+  color: var(--f-warm);
   font-family: "IBM Plex Mono", monospace;
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.yana-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--yana-gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-  z-index: -1;
-}
-
-.yana-btn:hover::before {
-  transform: scaleX(1);
-}
-.yana-btn:hover {
-  color: var(--yana-warm);
-}
-
-.yana-btn-filled {
-  background: var(--yana-gold);
-  border: 1px solid var(--yana-gold);
-  color: var(--yana-warm);
   padding: 14px 40px;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  border: 1px solid var(--f-black);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
-
-.yana-btn-filled:hover {
-  background: var(--yana-charcoal);
-  border-color: var(--yana-charcoal);
-  color: var(--yana-warm);
-}
-
-/* ── Nav links ── */
-.nav-link {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--yana-ink);
-  opacity: 0.45;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
+.btn-primary:hover {
   background: transparent;
-  border: none;
-  padding: 0;
+  color: var(--f-black);
 }
 
-.nav-link::after {
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--f-black);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 14px 40px;
+  border: 1px solid var(--f-border);
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+.btn-outline:hover {
+  border-color: var(--f-black);
+}
+
+/* ── nav ── */
+.nav-item {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--f-mid);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  transition: color 0.25s;
+  position: relative;
+}
+.nav-item::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--yana-gold);
-  transition: width 0.3s ease;
+  background: var(--f-black);
+  transition: width 0.25s;
 }
-
-.nav-link:hover {
-  opacity: 1;
-  color: var(--yana-gold);
+.nav-item:hover,
+.nav-item.active {
+  color: var(--f-black);
 }
-.nav-link:hover::after {
+.nav-item:hover::after,
+.nav-item.active::after {
   width: 100%;
 }
 
-/* ── Cards ── */
+/* ── product card ── */
 .product-card {
-  background: var(--yana-cream);
-  border: 1px solid var(--yana-border);
-  transition: all 0.4s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
-
-.product-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(155, 110, 46, 0.04) 0%,
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
+.product-card .card-img {
+  overflow: hidden;
+}
+.product-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+.product-card:hover .card-img img {
+  transform: scale(1.04);
 }
 
-.product-card:hover {
-  border-color: rgba(155, 110, 46, 0.45);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(155, 110, 46, 0.12);
+/* ── rules ── */
+.rule {
+  border: none;
+  height: 1px;
+  background: var(--f-border);
 }
-
-.product-card:hover::after {
-  opacity: 1;
-}
-
-/* ── Glass panel (light version) ── */
-.glass-panel {
-  background: rgba(250, 247, 242, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--yana-border);
-}
-
-/* ── Organic shapes ── */
-.organic-blob {
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-}
-.organic-blob-2 {
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-}
-
-/* ── Divider line ── */
-.yana-divider {
+.rule-gold {
   border: none;
   height: 1px;
   background: linear-gradient(
     to right,
     transparent,
-    var(--yana-border) 30%,
-    var(--yana-gold-light) 50%,
-    var(--yana-border) 70%,
+    var(--f-gold2),
     transparent
   );
+}
+
+/* ── nav bar ── */
+.nav-bar {
+  background: rgba(248, 245, 240, 0.93);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--f-border);
+}
+
+/* ── hover underline link ── */
+.link-hover {
+  position: relative;
+  display: inline-block;
+}
+.link-hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s;
+}
+.link-hover:hover::after {
+  width: 100%;
 }
