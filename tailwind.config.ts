@@ -20,9 +20,11 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				cormorant: ['Cormorant', 'serif'],
-				ibm: ['IBM Plex Sans', 'sans-serif'],
-				mono: ['IBM Plex Mono', 'monospace'],
+				cormorant: ['"Cormorant Garamond"', 'serif'],
+				playfair: ['"Playfair Display"', 'serif'],
+				garamond: ['"EB Garamond"', 'serif'],
+				ibm: ['"IBM Plex Sans"', 'sans-serif'],
+				mono: ['"IBM Plex Mono"', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -59,12 +61,17 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				yana: {
-					gold: '#C9A84C',
-					teal: '#2ABFB0',
-					dark: '#0A0A0A',
-					charcoal: '#141414',
-					warm: '#EDE8DF',
-					muted: '#5A5550',
+					gold: '#9B6E2E',
+					'gold-light': '#C9A56A',
+					teal: '#2A7A72',
+					dark: '#1C1510',
+					charcoal: '#2E2620',
+					warm: '#FAF7F2',
+					cream: '#F3EDE2',
+					parchment: '#EAE0CE',
+					ink: '#2C2016',
+					muted: '#8A7A6A',
+					border: '#D8CEBC',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
